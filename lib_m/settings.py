@@ -82,6 +82,8 @@ DATABASES = {
         'PASSWORD': 'admin',  # Replace with your MySQL password
         'HOST': 'localhost',  # Use 'localhost' if MySQL is on the same machine
         'PORT': '3306',  # MySQL default port
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME stored in project': os.path.join(BASE_DIR,'database_backups','libdb.sql')
     }
 }
 
