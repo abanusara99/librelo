@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 7%;
+            background-color: purple;
+        }
+        form{
+            margin-top: 20px;
+            background-color: white;
+            margin-left: 150px; /* Adjust the left margin as needed */
+            margin-right: 150px; /* Adjust the right margin as needed */
+            
+        }
+        input-container  {
+            padding-bottom: 20px; /* Adjust the padding as needed */
+        }
+    </style>    
+</head>
+<body>
+    
+    <div class="regiplace">
+        
+        <form method="post">
+        {% csrf_token %}
+        <h1>Registration</h1>
+        <br>
+        <div>
+            <input type="text" id="name" name="name" placeholder="Name" style="color: grey; width: 200px;"><br><br>
+        </div>
+        
+        <div>
+            <input type="text" id="username" name="username" placeholder="Username" style="color: grey; width: 200px;"><br><br>
+        </div>
+        
+        <div>
+            <input type="password" id="password" name="password" placeholder="Password" style="color: grey; width: 200px;"><br><br>
+        </div>
+        
+        <div>
+            <label for="accredat">Create-date:</label>
+            <input type="date" id="accrdat" name="accredat" placeholder="Account Created Date" style="color: grey;"><br><br>
+        </div>
+        
+        <div>
+            <label for="data">DOB:</label>
+            <input type="date" id="dob" name="dob" placeholder="Date of Birth" style="color: grey;" ><br><br>
+        </div>
+        
+        <div class ="input-container">
+        <a href="{% url 'login' %}"><input type="submit" value="Register"></a>
+        <input type="reset" value="Cancel">
+
+        <script>
+            // Function to check registration status
+            function checkRegistrationStatus() {
+                // Simulate registration status (replace this with your actual registration logic)
+                var isRegistrationSuccessful = true; // Set to false to simulate an existing user
+        
+                // Select the registration status element
+                var registrationStatusElement = document.getElementById('registration-status');
+        
+                // Display different alerts based on the registration status
+                if (isRegistrationSuccessful) {
+                    registrationStatusElement.textContent = 'Registration is successful.';
+                    registrationStatusElement.style.color = 'green'; // You can style the alert here
+                } else {
+                    registrationStatusElement.textContent = 'User already exists.';
+                    registrationStatusElement.style.color = 'red'; // You can style the alert here
+                }
+            }
+        
+            // Add a click event listener to the registration button
+            var registerButton = document.getElementById('register-button');
+            registerButton.addEventListener('click', checkRegistrationStatus);
+        </script>
+    </div>
+    <br><br>
+    </form>
+</body>
+</html>
